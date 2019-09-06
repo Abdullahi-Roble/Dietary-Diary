@@ -31,3 +31,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* Styling starts here */
+
+form {
+  padding: 5% 0;
+}
+
+input {
+  margin: 0 3%;
+  padding: 1%;
+}
+
