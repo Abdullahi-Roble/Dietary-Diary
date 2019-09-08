@@ -34,12 +34,43 @@
 
 /* Styling starts here */
 
+body {
+  /* background: rgb(211, 255, 233); */
+}
+
+.wrapper {
+  max-width: 1100px;
+
+}
+
 form {
   padding: 5% 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.calorieCount {
+  display: flex;
+  flex-flow: column wrap;
+  /* background: rgb(142, 172, 157); */
+  /* color: white; */
+}
+
+.mealTime {
+  /* background: rgb(143, 172, 157); */
 }
 
 input {
   margin: 0 3%;
   padding: 1%;
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+label {
+  margin: 0 2%;
 }
 

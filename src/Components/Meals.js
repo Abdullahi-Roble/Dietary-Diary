@@ -4,22 +4,22 @@ const Meals = [
     {
         name: 'Breakfast',
         input: 'Enter food',
-        putin: 'Enter calories',
+        putin: 'Enter calories'
     },
     {
         name: 'Lunch',
         input: 'Enter food',
-        putin: 'Enter calories',
+        putin: 'Enter calories'
     },
     {
         name: 'Dinner',
         input: 'Enter food',
-        putin: 'Enter calories',
+        putin: 'Enter calories'
     },
     {
         name: 'Snacks',
         input: 'Enter food',
-        putin: 'Enter calories',
+        putin: 'Enter calories'
     }
 ];
 

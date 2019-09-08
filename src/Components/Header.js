@@ -5,7 +5,7 @@ class Header extends Component {
         return (
             <header>
                 <h1>Dietary Diary</h1>
-                <h3>Track your food intake!</h3>
+                <h3>Track your food intake</h3>
             </header>
         )
     }

@@ -1,29 +1,35 @@
 import React, {Component} from 'react';
 import Meals from './Meals';
-
+// import firebase from './firebase';
 class Diet extends Component {
+
     render() {
         return (
             <div>
                 {Meals.map((meal) => {
                     return (
-                        <form action="submit">
-                            <label 
-                            htmlFor="mealName">
-                            {meal.name} :
-                            </label>
-                            <textarea 
-                            rows="10" 
-                            columns="10" 
-                            type="text" 
-                            name="userMeal" 
-                            id="foodsEaten" 
-                            placeholder={meal.input} />
-                            <input type="text" 
-                            name="userCals" 
-                            id="calsEaten" 
-                            placeholder={meal.putin} />
-                        </form>
+                        <div className="mealTime">
+                            <form action="submit" onSubmit={this.props.getAllInfo} >
+                                <label>
+                                {meal.name} :
+                                </label>
+                                <input
+                                type="text" 
+                                name="userMeal" 
+                                id="userMeal" 
+                                placeholder={meal.input}
+                                onChange={this.props.captureUserInput}
+                                value={this.props.userMeal}
+                                />
+                                <input type="text" 
+                                name="calsEaten" 
+                                id="calsEaten" 
+                                placeholder={meal.putin}
+                                onChange={this.props.getUserInput}
+                                // value={this.state.userCals}
+                                />
+                            </form>
+                        </div>
                     )
                 })}
             </div>

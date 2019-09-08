@@ -2,12 +2,16 @@ import React from 'react';
 
 const Food = [
     {
-        name: 'Calories left',
-        input: 'Enter Calories',
+        name: 'Alloted Calories',
+        input: 'Goal Caloric Intake'
+    },
+    {
+        name: 'Remaining Calories',
+        input: 'Calories left',
     },
     {
         name: 'Total Calories',
-        input: 'Calories',
+        input: 'Calories Consumed',
     }
 ];
 

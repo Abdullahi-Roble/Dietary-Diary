@@ -2,14 +2,24 @@ import React, {Component} from 'react';
 import Food from './Food.js';
 
 class Calories extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            cals: []
+        }
+    }
+
+    
+
     render() {
         return (
-            <div>
+            <div className="calorieCount">
                 {Food.map((kcal) => {
                     return (
                         <form>
                             <label>{kcal.name} =</label>
-                            <input type="text" placeholder={kcal.input} />
+                            <input className="calInput" type="text" placeholder={kcal.input} onChange={this.props.getUserInput} />
                         </form>
                     )
                 })}
