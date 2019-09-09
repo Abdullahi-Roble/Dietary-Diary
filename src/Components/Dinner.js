@@ -10,7 +10,7 @@ class Dinner extends Component {
                         <label>
                             Dinner:
                         </label>
-                        <input
+                        <textarea
                             type="text"
                             name="userMeal"
                             id="userMeal"

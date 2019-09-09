@@ -18,8 +18,8 @@ class App extends Component {
 
     super();
     this.state = {
-      cals: '',
       meals: [],
+      cals: '',
       result: '',
       net1: '',
       net2: '',
