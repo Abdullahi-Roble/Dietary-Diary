@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import Food from './Food.js';
+// import Food from './Food.js';
+import Alloted from './Alloted.js';
+import Remaining from './Remaining';
 
 class Calories extends Component {
 
@@ -15,14 +17,17 @@ class Calories extends Component {
     render() {
         return (
             <div className="calorieCount">
-                {Food.map((kcal) => {
+                {/* {Food.map((kcal) => {
                     return (
                         <form>
                             <label>{kcal.name} =</label>
                             <input className="calInput" type="text" placeholder={kcal.input} onChange={this.props.getUserInput} />
                         </form>
+                        
                     )
-                })}
+                })} */}
+                <Alloted />
+                <Remaining />
             </div>
         )
     }

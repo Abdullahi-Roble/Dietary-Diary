@@ -3,15 +3,28 @@ import Meals from './Meals';
 // import firebase from './firebase';
 class Diet extends Component {
 
+    // constructor() {
+
+    //     super();
+    //     this.state = {
+    //         total: '',
+    //         calsEaten: ''
+    //     }
+    // }
+
+    // handleChange = event => {
+    //     this.setState({[event.target.name]: event.target.value});
+    // }
+
     render() {
         return (
             <div>
                 {Meals.map((meal) => {
                     return (
                         <div className="mealTime">
-                            <form action="submit" onSubmit={this.props.getAllInfo} >
+                            <fieldset>
                                 <label>
-                                {meal.name} :
+                                {meal.name}:
                                 </label>
                                 <input
                                 type="text" 
@@ -25,10 +38,10 @@ class Diet extends Component {
                                 name="calsEaten" 
                                 id="calsEaten" 
                                 placeholder={meal.putin}
-                                onChange={this.props.getUserInput}
+                                onChange={this.props.eatenUserInput}
                                 // value={this.state.userCals}
                                 />
-                            </form>
+                            </fieldset>
                         </div>
                     )
                 })}
