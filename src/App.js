@@ -130,6 +130,12 @@ class App extends Component {
       });
     });
   }
+
+  removeMeal = mealId => {
+    const dbRef = firebase.database().ref();
+
+    dbRef.child(mealId).remove();
+  }
   
   render() {
     return (
@@ -141,7 +147,7 @@ class App extends Component {
             {/* <Alloted userCalInput={this.handleCalsRemain} /> */}
             <fieldset>
               <label>Alloted Calories:</label>
-              <input className="calInput" type="text" placeholder="Alloted Calories" value={this.state.cals} onChange={this.handleGoalChange} />
+              <input className="calInput" type="text" placeholder="Enter Calories" value={this.state.cals} onChange={this.handleGoalChange} />
             </fieldset>
             {/* <Remaining /> */}
             <p>Goal Caloric Intake = {this.state.cals}</p>
@@ -166,6 +172,7 @@ class App extends Component {
               return (
                 <div>
                   <p>{meal.food}: {meal.cals} calories</p>
+                  <button onClick={() => this.removeMeal()}>Remove Food</button>
                 </div>
               )
             })}
