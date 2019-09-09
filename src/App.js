@@ -21,7 +21,11 @@ class App extends Component {
       cals: '',
       meals: [],
       result: '',
-      calsEaten: ''
+      net1: '',
+      net2: '',
+      net3: '',
+      net4: ''
+      // calsEaten: ''
     }
   }
 
@@ -45,11 +49,43 @@ class App extends Component {
     this.setState({userCals: event.target.value})
   }
 
-  handleNetChange = event => {
-    const calsEaten = Number(event.target.value);
+  // handleNetChange = event => {
+  //   const calsEaten = Number(event.target.value);
+  //   this.setState(prevState => ({
+  //     // calsEaten,
+  //     result: calsEaten + prevState.calsEaten
+  //   }));
+  // };
+
+  handleNet1Change = event => {
+    const net1 = Number(event.target.value);
     this.setState(prevState => ({
-      // calsEaten,
-      result: calsEaten + prevState.calsEaten
+      net1,
+      result: net1 + prevState.net2 + prevState.net3 + prevState.net4
+    }));
+  };
+
+  handleNet2Change = event => {
+    const net2 = Number(event.target.value);
+    this.setState(prevState => ({
+      net2,
+      result: prevState.net1 + net2 + prevState.net3 + prevState.net4
+    }));
+  };
+
+  handleNet3Change = event => {
+    const net3 = Number(event.target.value);
+    this.setState(prevState => ({
+      net3,
+      result: prevState.net1 + prevState.net2 + net3 + prevState.net4
+    }));
+  };
+
+  handleNet4Change = event => {
+    const net4 = Number(event.target.value);
+    this.setState(prevState => ({
+      net4,
+      result: prevState.net1 + prevState.net2 + prevState.net3 + net4
     }));
   };
 
@@ -108,14 +144,14 @@ class App extends Component {
             {/* <Diet captureUserInput={this.handleMealChange}  eatenUserInput={this.handleNetChange} */}
             {/* getUserInput={this.handleCalorieChange}  */}
             {/* /> */}
-            <Breakfast captureUserInput={this.handleMealChange} eatenUserInput={this.handleNetChange} />
-            <Lunch captureUserInput={this.handleMealChange} eatenUserInput={this.handleNetChange} />
-            <Dinner captureUserInput={this.handleMealChange} eatenUserInput={this.handleNetChange} />
-            <Snacks captureUserInput={this.handleMealChange} eatenUserInput={this.handleNetChange} />
+            <Breakfast captureUserInput={this.handleMealChange} eaten1UserInput={this.handleNet1Change} />
+            <Lunch captureUserInput={this.handleMealChange} eaten2UserInput={this.handleNet2Change} />
+            <Dinner captureUserInput={this.handleMealChange} eaten3UserInput={this.handleNet3Change} />
+            <Snacks captureUserInput={this.handleMealChange} eaten4UserInput={this.handleNet4Change} />
             {/* <Consumed /> */}
             <fieldset>
               <label className="calsRem">Total Calories =</label>
-              <input type="text" value={this.state.result} readOnly />
+              <p>{this.state.result}</p>
             </fieldset>
             <button onClick={this.handleFormSubmit}>Save</button>
           </form>

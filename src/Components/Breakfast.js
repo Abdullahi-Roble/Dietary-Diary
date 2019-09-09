@@ -22,7 +22,7 @@ class Breakfast extends Component {
                             name="calsEaten"
                             id="calsEaten"
                             placeholder="Enter Calories"
-                            onChange={this.props.eatenUserInput}
+                            onChange={this.props.eaten1UserInput}
                         // value={this.state.userCals}
                         />
                     </fieldset>
