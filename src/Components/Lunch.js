@@ -22,7 +22,7 @@ class Lunch extends Component {
                             name="calsEaten"
                             id="calsEaten"
                             placeholder="Enter Calories"
-                            onChange={this.props.eaten2UserInput}
+                            onChange={this.props.getUserInput}
                         // value={this.state.userCals}
                         />
                     </fieldset>

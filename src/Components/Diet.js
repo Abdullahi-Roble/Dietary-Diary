@@ -38,7 +38,7 @@ class Diet extends Component {
                                 name="calsEaten" 
                                 id="calsEaten" 
                                 placeholder={meal.putin}
-                                onChange={this.props.eatenUserInput}
+                                onChange={this.props.getUserInput}
                                 // value={this.state.userCals}
                                 />
                             </fieldset>

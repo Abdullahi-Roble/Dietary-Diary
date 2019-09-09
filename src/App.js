@@ -25,17 +25,8 @@ class App extends Component {
       net2: '',
       net3: '',
       net4: ''
-      // calsEaten: ''
     }
   }
-
-  // handleCalsRemain = event => {
-  //   this.setState({calsEaten: event.target.value})
-  // }
-
-  // handleNameChange = event => {
-  //   this.setState({mealName: event.target.value})
-  // }
 
   handleGoalChange = event => {
     this.setState({cals: event.target.value})
@@ -49,21 +40,18 @@ class App extends Component {
     this.setState({userCals: event.target.value})
   }
 
-  // handleNetChange = event => {
-  //   const calsEaten = Number(event.target.value);
-  //   this.setState(prevState => ({
-  //     // calsEaten,
-  //     result: calsEaten + prevState.calsEaten
-  //   }));
-  // };
-
   handleNet1Change = event => {
     const net1 = Number(event.target.value);
     this.setState(prevState => ({
       net1,
       result: net1 + prevState.net2 + prevState.net3 + prevState.net4
     }));
-  };
+  }
+
+  handleNum1Change = event => {
+    this.handleCalorieChange(event);
+    this.handleNet1Change(event);
+  }
 
   handleNet2Change = event => {
     const net2 = Number(event.target.value);
@@ -71,7 +59,12 @@ class App extends Component {
       net2,
       result: prevState.net1 + net2 + prevState.net3 + prevState.net4
     }));
-  };
+  }
+
+  handleNum2Change = event => {
+    this.handleCalorieChange(event);
+    this.handleNet2Change(event);
+  }
 
   handleNet3Change = event => {
     const net3 = Number(event.target.value);
@@ -79,7 +72,12 @@ class App extends Component {
       net3,
       result: prevState.net1 + prevState.net2 + net3 + prevState.net4
     }));
-  };
+  }
+
+  handleNum3Change = event => {
+    this.handleCalorieChange(event);
+    this.handleNet3Change(event);
+  }
 
   handleNet4Change = event => {
     const net4 = Number(event.target.value);
@@ -87,25 +85,31 @@ class App extends Component {
       net4,
       result: prevState.net1 + prevState.net2 + prevState.net3 + net4
     }));
-  };
+  }
+
+  handleNum4Change = event => {
+    this.handleCalorieChange(event);
+    this.handleNet4Change(event);
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    // console.log(this.state.userCals);
 
     const mealTime = {
       // name: this.state.mealName,
       food: this.state.userMeal,
       cals: this.state.userCals,
+    
     }
 
     const dbRef = firebase.database().ref();
 
     dbRef.push(mealTime);
 
-    this.setState({userMeal: ''})
-
-    this.setState({userCals: ''})
+    this.setState({
+      userMeal: '',
+      userCals: '',
+    })
   }
 
   componentDidMount() {
@@ -132,22 +136,22 @@ class App extends Component {
 
       <div className="App">
         <Header />
-        <div className="formatPage">
+        <div className="wrapper">
           <form action="submit">
             {/* <Alloted userCalInput={this.handleCalsRemain} /> */}
             <fieldset>
-              <label>Goal Caloric Intake:</label>
+              <label>Alloted Calories:</label>
               <input className="calInput" type="text" placeholder="Alloted Calories" value={this.state.cals} onChange={this.handleGoalChange} />
             </fieldset>
             {/* <Remaining /> */}
-              <p>Calories Remaining = {this.state.cals}</p>
+            <p>Goal Caloric Intake = {this.state.cals}</p>
             {/* <Diet captureUserInput={this.handleMealChange}  eatenUserInput={this.handleNetChange} */}
             {/* getUserInput={this.handleCalorieChange}  */}
             {/* /> */}
-            <Breakfast captureUserInput={this.handleMealChange} eaten1UserInput={this.handleNet1Change} />
-            <Lunch captureUserInput={this.handleMealChange} eaten2UserInput={this.handleNet2Change} />
-            <Dinner captureUserInput={this.handleMealChange} eaten3UserInput={this.handleNet3Change} />
-            <Snacks captureUserInput={this.handleMealChange} eaten4UserInput={this.handleNet4Change} />
+            <Breakfast captureUserInput={this.handleMealChange} getUserInput={this.handleNum1Change} />
+            <Lunch captureUserInput={this.handleMealChange} getUserInput={this.handleNum2Change} />
+            <Dinner captureUserInput={this.handleMealChange} getUserInput={this.handleNum3Change} />
+            <Snacks captureUserInput={this.handleMealChange} getUserInput={this.handleNum4Change} />
             {/* <Consumed /> */}
             <fieldset>
               <label className="calsRem">Total Calories =</label>
@@ -159,7 +163,11 @@ class App extends Component {
         <div>
           <div className="shownResults">
             {this.state.meals.map((meal) => {
-              return <p>{meal.food}: {meal.cals} calories</p>
+              return (
+                <div>
+                  <p>{meal.food}: {meal.cals} calories</p>
+                </div>
+              )
             })}
           </div>
         </div>
