@@ -107,8 +107,14 @@ class App extends Component {
     dbRef.push(mealTime);
 
     this.setState({
-      userMeal: '',
-      userCals: '',
+      user1Meal: '',
+      user2Meal: '',
+      user3Meal: '',
+      user4Meal: '',
+      user1Cals: '',
+      user2Cals: '',
+      user3Cals: '',
+      user4Cals: '',
     })
   }
 
@@ -120,9 +126,14 @@ class App extends Component {
       const newMeal = [];
 
       const data = response.val();
+      console.log(data);
 
       for (let key in data) {
-        newMeal.push(data[key]);
+        console.log(key);
+        const mealObject = data[key];
+        mealObject.removeKey = key;
+        console.log(mealObject);
+        newMeal.push(mealObject);
       }
 
       this.setState({
@@ -154,10 +165,10 @@ class App extends Component {
             {/* <Diet captureUserInput={this.handleMealChange}  eatenUserInput={this.handleNetChange} */}
             {/* getUserInput={this.handleCalorieChange}  */}
             {/* /> */}
-            <Breakfast captureUserInput={this.handleMealChange} getUserInput={this.handleNum1Change} />
-            <Lunch captureUserInput={this.handleMealChange} getUserInput={this.handleNum2Change} />
-            <Dinner captureUserInput={this.handleMealChange} getUserInput={this.handleNum3Change} />
-            <Snacks captureUserInput={this.handleMealChange} getUserInput={this.handleNum4Change} />
+            <Breakfast captureUserInput={this.handleMealChange} getUserInput={this.handleNum1Change} clearValue={this.state.user1Meal} valueClear={this.state.user1Cals} />
+            <Lunch captureUserInput={this.handleMealChange} getUserInput={this.handleNum2Change} clearValue={this.state.user2Meal} valueClear={this.state.user2Cals} />
+            <Dinner captureUserInput={this.handleMealChange} getUserInput={this.handleNum3Change} clearValue={this.state.user3Meal} valueClear={this.state.user3Cals} />
+            <Snacks captureUserInput={this.handleMealChange} getUserInput={this.handleNum4Change} clearValue={this.state.user4Meal} valueClear={this.state.user4Cals} />
             {/* <Consumed /> */}
             <fieldset>
               <label className="calsRem">Total Calories =</label>
@@ -172,7 +183,7 @@ class App extends Component {
               return (
                 <div>
                   <p>{meal.food}: {meal.cals} calories</p>
-                  <button onClick={() => this.removeMeal()}>Remove Food</button>
+                  <button onClick={() => this.removeMeal(meal.removeKey)}>Remove Food</button>
                 </div>
               )
             })}

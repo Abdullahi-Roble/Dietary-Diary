@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,700|Satisfy&display=swap');
+
 .App {
   text-align: center;
 }
@@ -51,9 +53,27 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  
+  font-family: 'Barlow', sans-serif;
+  color: #fff;
 }
+
+h1,
+h2 {
+  font-family: 'Satisfy', cursive;
+}
+
+h1 {
+  font-size: 4rem;
+  color: tomato;
+}
+
+h2 {
+  font-size: 2rem;
+  padding: 0 0 5% 0;
+  margin: 0 auto;
+  color: mintcream;
+}
+
 
 .wrapper {
   max-width: 1200px;
@@ -67,16 +87,10 @@ header {
 .appHead {
   width: 45%;
   margin: 0 auto;
-  color: #fff;
-}
-
-h3 {
-  padding: 0 0 5% 0;
-  margin: 0 auto;
 }
 
 .titleStyle {
-  /* color: rgb(105, 105, 105); */
+  color: mintcream;
 }
 
 form {
@@ -85,13 +99,14 @@ form {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  border-radius: 5%;
+  background: #36373a;
+  border: 3px solid #a1a83c;
+  
 }
 
 fieldset {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   width: 25rem;
   border: none;
   justify-content: space-between;

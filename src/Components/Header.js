@@ -6,7 +6,7 @@ class Header extends Component {
             <header>
                 <div className="appHead">
                     <h1>Di<span className="titleStyle">et</span>ary</h1>
-                    <h3>Track your food intake</h3>
+                    <h2>Track your food intake</h2>
                 </div>
             </header>
         )

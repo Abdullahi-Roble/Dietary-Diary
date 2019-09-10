@@ -16,14 +16,14 @@ class Dinner extends Component {
                             id="userMeal"
                             placeholder="Enter Food"
                             onChange={this.props.captureUserInput}
-                        // value={this.props.userMeal}
+                            value={this.props.clearValue}
                         />
                         <input type="text"
                             name="calsEaten"
                             id="calsEaten"
                             placeholder="Enter Calories"
                             onChange={this.props.getUserInput}
-                        // value={this.state.userCals}
+                            value={this.props.valueClear}
                         />
                     </fieldset>
                 </div>
