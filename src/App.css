@@ -66,6 +66,7 @@ label {
 h1 {
   font-size: 5rem;
   color: #e03e22;
+  text-align: center;
 }
 
 h2 {
@@ -102,7 +103,7 @@ form {
   justify-content: center;
   background: #36373a;
   border: 3px solid #a1a83c;
-  
+  width: 100%;
 }
 
 fieldset {
@@ -130,6 +131,13 @@ input, textarea {
 label {
   margin: 0 2%;
   font-size: 2rem;
+}
+
+button {
+  width: 50%;
+  padding: 2% 1%;
+  background: #a1a83c;
+  border: 2px solid #a1a83c;
 }
 
 .totalCals {
@@ -165,3 +173,61 @@ a {
   font-size: 0.8rem;
 }
 
+/* Responsive Design */
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+
+  fieldset {
+    width: 20rem;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+  
+
+  fieldset {
+    width: 15rem;
+  }
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+
+  fieldset {
+    width: 10rem;
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  .wrapper {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    width: 13rem;
+    margin: 0 10%;
+  }
+}
