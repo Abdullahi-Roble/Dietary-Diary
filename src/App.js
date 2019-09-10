@@ -32,12 +32,36 @@ class App extends Component {
     this.setState({cals: event.target.value})
   }
 
-  handleMealChange = event => {
+  handleBreakfastChange = event => {
     this.setState({userMeal: event.target.value, user1Meal: event.target.value})
   }
 
-  handleCalorieChange = event => {
+  handleCalBreakChange = event => {
     this.setState({userCals: event.target.value, user1Cals: event.target.value})
+  }
+
+  handleLunchChange = event => {
+    this.setState({ userMeal: event.target.value, user2Meal: event.target.value })
+  }
+
+  handleCalLunchChange = event => {
+    this.setState({ userCals: event.target.value, user2Cals: event.target.value })
+  }
+
+  handleDinnerChange = event => {
+    this.setState({ userMeal: event.target.value, user3Meal: event.target.value })
+  }
+
+  handleCalDinChange = event => {
+    this.setState({ userCals: event.target.value, user3Cals: event.target.value })
+  }
+
+  handleSnacksChange = event => {
+    this.setState({ userMeal: event.target.value, user4Meal: event.target.value })
+  }
+
+  handleCalSnakChange = event => {
+    this.setState({ userCals: event.target.value, user4Cals: event.target.value })
   }
 
   handleNet1Change = event => {
@@ -49,7 +73,7 @@ class App extends Component {
   }
 
   handleNum1Change = event => {
-    this.handleCalorieChange(event);
+    this.handleCalBreakChange(event);
     this.handleNet1Change(event);
   }
 
@@ -62,7 +86,7 @@ class App extends Component {
   }
 
   handleNum2Change = event => {
-    this.handleCalorieChange(event);
+    this.handleCalLunchChange(event);
     this.handleNet2Change(event);
   }
 
@@ -75,7 +99,7 @@ class App extends Component {
   }
 
   handleNum3Change = event => {
-    this.handleCalorieChange(event);
+    this.handleCalDinChange(event);
     this.handleNet3Change(event);
   }
 
@@ -88,7 +112,7 @@ class App extends Component {
   }
 
   handleNum4Change = event => {
-    this.handleCalorieChange(event);
+    this.handleCalSnakChange(event);
     this.handleNet4Change(event);
   }
 
@@ -158,11 +182,11 @@ class App extends Component {
             <Alloted userCalInput={this.handleGoalChange} calsValue={this.state.cals} />
             <Remaining calsPlanned={this.state.cals} />
             <Consumed calsEaten={this.state.result} />
-            {/* <Diet captureUserInput={this.handleMealChange}  eatenUserInput={this.handleNetChange} /> */}
-            <Breakfast captureUserInput={this.handleMealChange} getUserInput={this.handleNum1Change} clearValue={this.state.user1Meal} valueClear={this.state.user1Cals} />
-            <Lunch captureUserInput={this.handleMealChange} getUserInput={this.handleNum2Change} clearValue={this.state.user2Meal} valueClear={this.state.user2Cals} />
-            <Dinner captureUserInput={this.handleMealChange} getUserInput={this.handleNum3Change} clearValue={this.state.user3Meal} valueClear={this.state.user3Cals} />
-            <Snacks captureUserInput={this.handleMealChange} getUserInput={this.handleNum4Change} clearValue={this.state.user4Meal} valueClear={this.state.user4Cals} />
+            {/* <Diet captureUserInput={this.handleBreakfastChange}  eatenUserInput={this.handleNetChange} /> */}
+            <Breakfast captureUserInput={this.handleBreakfastChange} getUserInput={this.handleNum1Change} clearValue={this.state.user1Meal} valueClear={this.state.user1Cals} />
+            <Lunch captureUserInput={this.handleLunchChange} getUserInput={this.handleNum2Change} clearValue={this.state.user2Meal} valueClear={this.state.user2Cals} />
+            <Dinner captureUserInput={this.handleDinnerChange} getUserInput={this.handleNum3Change} clearValue={this.state.user3Meal} valueClear={this.state.user3Cals} />
+            <Snacks captureUserInput={this.handleSnacksChange} getUserInput={this.handleNum4Change} clearValue={this.state.user4Meal} valueClear={this.state.user4Cals} />
             <button onClick={this.handleFormSubmit}>Save</button>
           </form>
         </div>
