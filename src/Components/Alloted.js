@@ -4,8 +4,8 @@ class Alloted extends Component {
     render() {
         return (
             <fieldset>
-                <label>Goal Caloric Intake:</label>
-                <input className="calInput" type="text" placeholder="Alloted Calories" onChange={this.props.userCalInput} />
+                <label>Alloted Calories:</label>
+                <input className="calInput" type="text" placeholder="Enter Calories" value={this.props.calsValue} onChange={this.props.userCalInput} />
             </fieldset>
         )
     }

@@ -54,21 +54,22 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Barlow', sans-serif;
-  color: #fff;
+  color: mintcream;
 }
 
 h1,
-h2 {
+h2,
+label {
   font-family: 'Satisfy', cursive;
 }
 
 h1 {
-  font-size: 4rem;
-  color: tomato;
+  font-size: 5rem;
+  color: #e03e22;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 0 0 5% 0;
   margin: 0 auto;
   color: mintcream;
@@ -117,13 +118,27 @@ fieldset {
 input {
   margin: 0 3%;
   padding: 1%;
-  border: none;
-  border-bottom: 1px solid black;
   text-align: center;
+}
+
+input, textarea {
+  border: 2px solid #e03e22;
+  width: 100%;
+  margin: 3% 0;
 }
 
 label {
   margin: 0 2%;
+  font-size: 2rem;
+}
+
+.totalCals {
+  font-size: 1.5rem;
+}
+
+.totalCals span {
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .shownResults {

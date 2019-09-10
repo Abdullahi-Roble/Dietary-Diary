@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import Header from './Components/Header.js';
 import Footer from './Components/Footer.js';
-// import Alloted from './Components/Alloted.js';
+import Alloted from './Components/Alloted.js';
 // import Diet from './Components/Diet.js';
-// import Consumed from './Components/Consumed.js';
-// import Remaining from './Components/Remaining.js';
+import Consumed from './Components/Consumed.js';
+import Remaining from './Components/Remaining.js';
 import Breakfast from './Components/Breakfast.js';
 import Lunch from './Components/Lunch.js';
 import Dinner from './Components/Dinner.js';
@@ -126,13 +126,13 @@ class App extends Component {
       const newMeal = [];
 
       const data = response.val();
-      console.log(data);
+      // console.log(data);
 
       for (let key in data) {
-        console.log(key);
+        // console.log(key);
         const mealObject = data[key];
         mealObject.removeKey = key;
-        console.log(mealObject);
+        // console.log(mealObject);
         newMeal.push(mealObject);
       }
 
@@ -155,25 +155,14 @@ class App extends Component {
         <Header />
         <div className="wrapper">
           <form action="submit">
-            {/* <Alloted userCalInput={this.handleCalsRemain} /> */}
-            <fieldset>
-              <label>Alloted Calories:</label>
-              <input className="calInput" type="text" placeholder="Enter Calories" value={this.state.cals} onChange={this.handleGoalChange} />
-            </fieldset>
-            {/* <Remaining /> */}
-            <p>Goal Caloric Intake = {this.state.cals}</p>
-            {/* <Diet captureUserInput={this.handleMealChange}  eatenUserInput={this.handleNetChange} */}
-            {/* getUserInput={this.handleCalorieChange}  */}
-            {/* /> */}
+            <Alloted userCalInput={this.handleGoalChange} calsValue={this.state.cals} />
+            <Remaining calsPlanned={this.state.cals} />
+            <Consumed calsEaten={this.state.result} />
+            {/* <Diet captureUserInput={this.handleMealChange}  eatenUserInput={this.handleNetChange} /> */}
             <Breakfast captureUserInput={this.handleMealChange} getUserInput={this.handleNum1Change} clearValue={this.state.user1Meal} valueClear={this.state.user1Cals} />
             <Lunch captureUserInput={this.handleMealChange} getUserInput={this.handleNum2Change} clearValue={this.state.user2Meal} valueClear={this.state.user2Cals} />
             <Dinner captureUserInput={this.handleMealChange} getUserInput={this.handleNum3Change} clearValue={this.state.user3Meal} valueClear={this.state.user3Cals} />
             <Snacks captureUserInput={this.handleMealChange} getUserInput={this.handleNum4Change} clearValue={this.state.user4Meal} valueClear={this.state.user4Cals} />
-            {/* <Consumed /> */}
-            <fieldset>
-              <label className="calsRem">Total Calories =</label>
-              <p>{this.state.result}</p>
-            </fieldset>
             <button onClick={this.handleFormSubmit}>Save</button>
           </form>
         </div>

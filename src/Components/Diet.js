@@ -3,19 +3,6 @@ import Meals from './Meals';
 // import firebase from './firebase';
 class Diet extends Component {
 
-    // constructor() {
-
-    //     super();
-    //     this.state = {
-    //         total: '',
-    //         calsEaten: ''
-    //     }
-    // }
-
-    // handleChange = event => {
-    //     this.setState({[event.target.name]: event.target.value});
-    // }
-
     render() {
         return (
             <div>

@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 class Consumed extends Component {
     render() {
         return (
-            <fieldset>
-                <label className="calsRem">Total Calories =</label>
-                <p></p>
-            </fieldset>
+            <div className="totalCals">
+                <p>Total Calories = <span>{this.props.calsEaten}</span></p>
+            </div>
         )
     }
 }
