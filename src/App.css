@@ -151,13 +151,32 @@ button {
 
 .shownResults {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
     justify-content: flex-start;
     text-align: left;
-    width: 45%;
+    width: 100%;
     margin: 0 auto;
     color: #fff;
+    text-align: center;
+}
+
+.shownResults ul {
+  padding: 0;
+}
+
+.shownResults button {
+  width: 50%;
+}
+
+.resultBlocks {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
 }
 
 .footStyle,

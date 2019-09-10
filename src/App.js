@@ -170,8 +170,12 @@ class App extends Component {
           <div className="shownResults">
             {this.state.meals.map((meal) => {
               return (
-                <div>
-                  <p>{meal.food}: {meal.cals} calories</p>
+                <div className="resultBlocks">
+                  <ul>
+                    <li>
+                      <p>{meal.food}: {meal.cals} calories</p>
+                    </li>
+                  </ul>
                   <button onClick={() => this.removeMeal(meal.removeKey)}>Remove Food</button>
                 </div>
               )
