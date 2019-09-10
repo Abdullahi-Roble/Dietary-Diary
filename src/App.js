@@ -33,11 +33,11 @@ class App extends Component {
   }
 
   handleMealChange = event => {
-    this.setState({userMeal: event.target.value})
+    this.setState({userMeal: event.target.value, user1Meal: event.target.value})
   }
 
   handleCalorieChange = event => {
-    this.setState({userCals: event.target.value})
+    this.setState({userCals: event.target.value, user1Cals: event.target.value})
   }
 
   handleNet1Change = event => {
